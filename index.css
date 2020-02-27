@@ -1,0 +1,63 @@
+body {
+    background: rgb(204, 204, 204);
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: large;
+}
+
+h1 {
+    text-shadow: 1px 2px 0px rgb(204, 204, 204);
+}
+
+label {
+    display: block;
+    padding: 10px 0 10px 10px;
+}
+
+label:hover, .selected {
+    background: rgb(237, 237, 237);
+    box-shadow: 2px 2px 0px 1px rgb(112, 112, 112);
+}
+
+.submodules {
+    padding-left: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    width: 40%;
+    margin: auto;
+    padding: 0 20px 20px 20px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 4px 4px 0px 1px rgba(112,112,112,1);
+}
+
+button {
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: large;
+    border: none;
+    background: rgb(160, 160, 160);
+    color: white;
+    padding: 10px 30px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgb(130, 130, 130);
+}
+
+.modulesDiv {
+    margin: 10px 0;
+    background: rgba(130, 130, 130, 0.3);
+    border: 1px solid grey;
+}
+
+#modulesList p {
+    background: white;
+    margin: 3px 0 0 0;
+}

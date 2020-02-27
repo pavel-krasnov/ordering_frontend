@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MOX ordering form</title>
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="orderPageContainer" class="container">
+            <h1>Create an order</h1>
+            <h2>Choose modules</h2>
+            <button id="resetBtn">Reset</button>
+            <button id="nextBtn">Next</button>
+        </div>
+        <div id="confirmationPageContainer" class="hidden container">
+            <h1>Confirm your order</h1>
+            <button id="backBtn">Back</button>
+            <button id="submitBtn">Submit</button>
+        </div>
+        <div id="summaryPageContainer" class="hidden container">
+            <h1>Your order has been submitted!</h1>
+            <p>We are already working on it.</p>
+        </div>
+        <script src="testData.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
