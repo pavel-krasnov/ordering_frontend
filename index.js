@@ -4,11 +4,13 @@ const postOrderURL = "http://127.0.0.1:8000/orders/";
 //Fetched from the server or, if it's down, from ./testData.js
 let formData;
 
+//Containers for each of the three single-page app screens
 const orderPageContainer = document.getElementById("orderPageContainer");
 const confirmationPageContainer = document.getElementById("confirmationPageContainer");
 const summaryPageContainer = document.getElementById("summaryPageContainer");
 
 document.addEventListener("click", evt => {
+    //Preventing page refresh on button click
     if (evt.target.nodeName === "button") {
         evt.preventDefault();
     }
@@ -75,8 +77,9 @@ function createOrderForm() {
 */
 function createModuleWithSubmodulesItem(module) {
     const modulesDiv = document.createElement("div");
-    modulesDiv.appendChild(createLabel(module));
     modulesDiv.className = "modulesDiv";
+    modulesDiv.appendChild(createLabel(module));
+    //If module has submodules, appending them
     if (module.submodules && module.submodules.length != 0) {
         const submodulesParagraph = createElementWithText("p", `Submodules of ${module.name}`);
         submodulesParagraph.classList.add("submodules");
@@ -92,17 +95,16 @@ function createModuleWithSubmodulesItem(module) {
     <input type="checkbox" id={module id} value={module name}>
 </label>
 */
-function createLabel(module) {
+function createLabel(module) {    
+    //Creating checkbox
     const checkbox = document.createElement("input");
-    const label = createElementWithText("label", module.name);
-    
     checkbox.type = "checkbox";
     checkbox.id = module.id;
     checkbox.value = module.name;
-    
+    //Creating label and appending checkbox as a first child
+    const label = createElementWithText("label", module.name);
     label.className = module.submodules ? "modules" : "submodules";
-    label.appendChild(checkbox);
-
+    label.insertBefore(checkbox, label.childNodes[0]);
     return label;
 }
 
@@ -170,7 +172,6 @@ function resetCheckboxes() {
 }
 
 function makePost() {
-    console.log(JSON.stringify(getCheckedCheckboxes("id")));
     fetch(postOrderURL, {
         method: "POST",
         headers: {
